@@ -21,9 +21,9 @@ namespace frmTrackThread
         private void button1_Click(object sender, EventArgs e)
         {
             Thread ThreadA = new Thread(MyThreadClass.Thread1);
-            Thread ThreadB = new Thread(MyThreadClass.Thread1);
+            Thread ThreadB = new Thread(MyThreadClass.Thread2);
             Thread ThreadC = new Thread(MyThreadClass.Thread1);
-            Thread ThreadD = new Thread(MyThreadClass.Thread1);
+            Thread ThreadD = new Thread(MyThreadClass.Thread2);
 
             ThreadA.Name = "Thread A";
             ThreadB.Name = "Thread B";
@@ -37,7 +37,7 @@ namespace frmTrackThread
 
             ThreadA.Priority = ThreadPriority.Highest;
             ThreadB.Priority = ThreadPriority.Normal;
-            ThreadB.Priority = ThreadPriority.AboveNormal;
+            ThreadC.Priority = ThreadPriority.AboveNormal;
             ThreadD.Priority = ThreadPriority.BelowNormal;
 
             ThreadA.Join();
