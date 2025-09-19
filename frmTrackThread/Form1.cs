@@ -25,15 +25,28 @@ namespace frmTrackThread
             Thread ThreadC = new Thread(MyThreadClass.Thread1);
             Thread ThreadD = new Thread(MyThreadClass.Thread1);
 
+            ThreadA.Name = "Thread A";
+            ThreadB.Name = "Thread B";
+            ThreadC.Name = "Thread C";
+            ThreadD.Name = "Thread D";
 
             ThreadA.Start();
             ThreadB.Start();
             ThreadC.Start();
             ThreadD.Start();
 
+            ThreadA.Priority = ThreadPriority.Highest;
+            ThreadB.Priority = ThreadPriority.Normal;
+            ThreadB.Priority = ThreadPriority.AboveNormal;
+            ThreadD.Priority = ThreadPriority.BelowNormal;
 
+            ThreadA.Join();
+            ThreadB.Join();
+            ThreadC.Join();
+            ThreadD.Join();
 
-            
+            label1.Text = "-End of Thread-";
+
         }
     }
 }

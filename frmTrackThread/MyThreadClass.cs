@@ -11,7 +11,7 @@ namespace frmTrackThread
     {
         public static void Thread1()
         {
-            for (int LoopCount = 0; LoopCount < 2; LoopCount++)
+            for (int LoopCount = 0; LoopCount < 3; LoopCount++)
             {
 
                 Thread thread = Thread.CurrentThread;
